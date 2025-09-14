@@ -1,0 +1,190 @@
+/* ==========================
+   ESTILO GLOBAL
+   ========================== */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to right, #1a0033, #0d001f);
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.background-glow {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(170, 0, 255, 0.3), transparent 70%);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+/* ==========================
+   MENÚ DE NAVEGACIÓN
+   ========================== */
+.menu {
+  position: sticky;
+  top: 0;
+  background-color: rgba(13, 0, 31, 0.95);
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(170, 0, 255, 0.2);
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.menu li {
+  display: inline-block;
+  margin: 0 20px;
+}
+.menu a {
+  color: #d896ff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+.menu a:hover {
+  color: #ffb3ff;
+  text-shadow: 0 0 5px #aa00ff;
+}
+
+/* ==========================
+   HEADER (PERFIL)
+   ========================== */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #aa00ff;
+  box-shadow: 0 0 20px #aa00ff;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px #aa00ff; }
+  50% { box-shadow: 0 0 40px #ff00ff; }
+  100% { box-shadow: 0 0 20px #aa00ff; }
+}
+h1 {
+  font-size: 2.5em;
+  margin: 10px 0;
+  color: #e0b3ff;
+}
+h2 {
+  font-size: 1.3em;
+  color: #c187ff;
+}
+
+/* ==========================
+   MAIN Y LAYOUT
+   ========================== */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+#posts {
+  flex: 3;
+}
+aside {
+  flex: 1;
+  background: rgba(170, 0, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aa00ff44;
+}
+
+/* ==========================
+   ARTÍCULOS
+   ========================== */
+article {
+  background: #1a0026;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-left: 5px solid #aa00ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aa00ff44;
+}
+.article-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.article-meta {
+  font-size: 0.9em;
+  color: #bbb;
+}
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #d896ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.read-more:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #aa00ff;
+}
+
+/* ==========================
+   ENLACES GLOBALES (otras secciones / aside / footer)
+   ========================== */
+a {
+  color: #d896ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0d001f;
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 40px;
+}
+
+/* ==========================
+   RESPONSIVE (para pantallas pequeñas)
+   ========================== */
+@media (max-width: 800px) {
+  main {
+    flex-direction: column; /* apila los posts y aside verticalmente */
+  }
+  .foto-perfil {
+    width: 140px;
+    height: 140px;
+  }
+  header {
+    padding: 30px 15px;
+  }
+  .article-img {
+    height: 160px;
+  }
+  .menu li {
+    margin: 0 10px;
+  }
+}
+
